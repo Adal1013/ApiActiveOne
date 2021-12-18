@@ -52,12 +52,12 @@ class SamProblemController extends Controller
     {
         $count = 0;
 
-        foreach ($inclusive_interval as $key => $interval) {
-            $find = filter_var($interval, FILTER_VALIDATE_INT, 
+        foreach ($distances_fruit as $key => $distance) {
+            $find = filter_var($distance, FILTER_VALIDATE_INT, 
                 array(
                     'options' => array(
-                        'min_range' => min($distances_fruit), 
-                        'max_range' => max($distances_fruit)
+                        'min_range' => min($inclusive_interval), 
+                        'max_range' => max($inclusive_interval)
                     )
                 )
             );

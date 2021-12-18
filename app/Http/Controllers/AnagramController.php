@@ -13,6 +13,21 @@ class AnagramController extends Controller
             'b' => 'required|max:50'
         ]);
 
-        
+        try {
+            $array_char = str_split(strtolower(trim($request->a)));
+            sort($array_char);
+            $string_a = implode('', $array_char);
+    
+            $array_char = str_split(strtolower(trim($request->b)));
+            sort($array_char);
+            $string_b = implode('', $array_char);
+        } catch (\Throwable $th) {
+            return response()->json(['error' => trans('messages.default_error')]);
+        }
+
+        $result = 'messages.' . (($string_a == $string_b) ? 'anagram_result' : 'anagram_not_result');        
+        $message = trans($result, array('a' => $request->a, 'b' => $request->b));
+
+        return response()->json(['data' => $message], 200);
     }
 }

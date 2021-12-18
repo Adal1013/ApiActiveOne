@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-define('CONTROLLERS_BASE_ROUTE', 'App\Http\Controllers\\');
+$base_route = 'App\Http\Controllers\\';
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +16,4 @@ define('CONTROLLERS_BASE_ROUTE', 'App\Http\Controllers\\');
 |
 */
 
-Route::post('/anagrams', CONTROLLERS_BASE_ROUTE.'AnagramController@check');
+Route::post('/anagrams', $base_route.'AnagramController@check');

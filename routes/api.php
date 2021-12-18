@@ -17,3 +17,5 @@ $base_route = 'App\Http\Controllers\\';
 */
 
 Route::post('/anagrams', $base_route.'AnagramController@check');
+Route::post('/absolutedifference', $base_route.'SquareMatrixController@absoluteDifference');
+Route::post('/inclusiveinterval', $base_route.'SamProblemController@inclusiveInterval');

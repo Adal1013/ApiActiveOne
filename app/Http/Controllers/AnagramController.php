@@ -14,11 +14,11 @@ class AnagramController extends Controller
         ]);
 
         try {
-            $array_char = str_split(strtolower(trim($request->a)));
+            $array_char = str_split(mb_strtolower(trim($request->a), 'UTF-8'));
             sort($array_char);
             $string_a = implode('', $array_char);
     
-            $array_char = str_split(strtolower(trim($request->b)));
+            $array_char = str_split(mb_strtolower(trim($request->b), 'UTF-8'));
             sort($array_char);
             $string_b = implode('', $array_char);
         } catch (\Throwable $th) {
